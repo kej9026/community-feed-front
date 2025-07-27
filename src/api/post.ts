@@ -1,7 +1,7 @@
 import type { Post } from '../types/post';
 
 export async function getPosts(): Promise<Post[]> {
-  const res = await fetch("http://localhost:8080/posts");
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/posts`);
   if (!res.ok) {
     throw new Error("Failed to fetch posts");
   }
